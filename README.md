@@ -1,4 +1,4 @@
-# Javascript Coding Standards - ININ Mumbai
+# Javascript Coding Standards - ININ
 
 This README outlines JavaScript/ES6 coding standards to be followed in Ember application.
 
