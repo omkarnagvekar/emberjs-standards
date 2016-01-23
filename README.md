@@ -1,4 +1,4 @@
-# emberjs-standards
+# Emberjs Coding Standards
 JavaScript Coding Standards - ININ Mumbai
 
 This README outlines JavaScript/ES6 coding standards to be followed in Ember application.
@@ -70,4 +70,132 @@ This README outlines JavaScript/ES6 coding standards to be followed in Ember app
 
 ### 2. Objects
 
+
+* Use the literal syntax for object creation. 
+
+    ```js
+    // bad  
+    const item = new Object();  
+    // good  
+    const item = {}; 
+    ```
+
+* Don't use reserved words as keys. 
+
+    ```js
+    // bad  
+    const superman = {  
+      default: { clark: 'kent' }, 
+      private: true,  
+    };  
+    // good  
+    const batman = { 
+      defaults: { bruce: 'wayne' }, 
+      hidden: true,  
+    }; 
+    ```
+
+* Use readable synonyms in place of reserved words. 
+
+    ```js
+    // bad  
+    const superman = { 
+        class: 'alien', 
+    };  
+    // bad  
+    const superman = { 
+        klass: 'alien', 
+    };  
+    // good  
+    const superman = { 
+        type: 'alien', 
+    }; 
+    ```
+
+* Use computed property names when creating objects with dynamic property names. 
+
+    ```js
+    function getKey(k) { 
+     return `a key named ${k}`;  
+    }  
+    // bad  
+    const obj = { 
+     id: 5, 
+     name: 'San Francisco',  
+    };  
+    obj[getKey('enabled')] = true;  
+    // good const obj = { 
+     id: 5, 
+     name: 'San Francisco', 
+     [getKey('enabled')]: true,  
+    }; 
+    ```
+
+* Use object method shorthand. 
+
+    ```js
+    // bad  
+    const atom = { 
+     value: 1, 
+     addValue: function (value) { 
+      return atom.value + value;  
+     },  
+    };  
+    // good  
+    const atom = { 
+     value: 1, 
+     addValue(value) { 
+      return atom.value + value; 
+     },  
+    }; 
+    ```
+
+* Use property value shorthand. 
+
+    ```js
+    const lukeSkywalker = 'Luke Skywalker';  
+    // bad  
+    const obj = { lukeSkywalker: lukeSkywalker, };  
+    // good  
+    const obj = { lukeSkywalker, }; 
+    Group your shorthand properties at the beginning of your object declaration. 
+    const anakinSkywalker = 'Anakin Skywalker';  
+    const lukeSkywalker = 'Luke Skywalker';  
+     
+    // bad  
+    const obj = { 
+     episodeOne: 1, 
+     twoJediWalkIntoACantina: 2, 
+     lukeSkywalker, 
+     episodeThree: 3, 
+     mayTheFourth: 4, 
+     anakinSkywalker,  
+    };  
+    // good  
+    const obj = { 
+     lukeSkywalker, 
+     anakinSkywalker, 
+     episodeOne: 1, 
+     twoJediWalkIntoACantina: 2, 
+     episodeThree: 3, 
+     mayTheFourth: 4,  
+    }; 
+    ```
+
+* Only quote properties that are invalid identifiers. 
+
+    ```js
+    // bad  
+    const bad = { 
+     'foo': 3, 
+     'bar': 4, 
+     'data-blah': 5,  
+    };  
+    // good  
+    const good = { 
+     foo: 3, 
+     bar: 4, 
+     'data-blah': 5,  
+    }; 
+    ```
 
