@@ -9,20 +9,25 @@ This README outlines JavaScript/ES6 coding standards to be followed in Ember app
 
 
 * When you access a primitive type you work directly on its value
-```
+
+    ```
     const foo = 1;  
     let bar = foo;  
     bar = 9;  
     console.log(foo, bar); // => 1, 9
-```
+    ```
+    
 * When you access a complex type you work on a reference to its value.
+   
     ```
     const foo = [1, 2];  
     const bar = foo;  
     bar[0] = 9;  
     console.log(foo[0], bar[0]); // => 9, 9
     ```
+    
 * Use const for all of your references; avoid using var
+    
     ```
     // bad  
     var a = 1;  
@@ -31,7 +36,9 @@ This README outlines JavaScript/ES6 coding standards to be followed in Ember app
     const a = 1;  
     const b = 2;
     ```
+    
 * If you must reassign references, use let instead of var.
+    
     ```
     // bad  
     var count = 1;  
@@ -45,7 +52,9 @@ This README outlines JavaScript/ES6 coding standards to be followed in Ember app
         count += 1; 
     }
     ```
+    
 * Note that both let and const are block-scoped.
+    
     ```
     // const and let only exist in the blocks they are defined in.  
     { 
@@ -55,6 +64,7 @@ This README outlines JavaScript/ES6 coding standards to be followed in Ember app
     console.log(a); // ReferenceError  
     console.log(b); // ReferenceError
     ```
+    
 * All variable declarations should be at the top of block scope with a single let/const
 
 
