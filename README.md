@@ -1039,9 +1039,9 @@ $sidebar.find('ul').hide();
 
 * Use => only for small methods(less than 4 lines) 
 * let-const instead of var
-* if-else: not more than 2 
+* if-else: not more than 2
 
-* Actions like Transitioning routes, opening/closing modals, reloading data into store should be done using Controller/Route action handling 
+* Actions like Transitioning routes, opening/closing modals, reloading data into store should be done using Controller/Route action handling
 * Always use Ember.observer() instead of .observes('') 
 * Always use Ember.computed() instead of .property('') 
 * Use Ember.String namespace for utility string functions 
