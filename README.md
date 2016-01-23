@@ -1,4 +1,4 @@
-# Javascript/ES6 Coding Standards - ININ Mumbai
+# Javascript Coding Standards - ININ Mumbai
 
 This README outlines JavaScript/ES6 coding standards to be followed in Ember application.
 
@@ -992,3 +992,61 @@ $sidebar.find('ul').hide();
 
 
 
+## Ember specific rules:
+
+### 1. Components
+
+* What actions to send from components: Actions relevant to application state not model state.  
+
+* Do not inject store into Components
+
+### 2. Components/Controllers
+
+* Preferred order of property declarations in Component/Controller declarations:
+    - Service injections
+    - Flags
+    - Computed properties
+    - Observers
+    - Helper functions
+    - actions
+
+* When declaring variable with same name as injected service, do not specify service name in brackets.
+
+* Define array elements on separate lines following array declaration syntax.
+
+* Local constants to be used in same file should be declared
+
+### 3. Routes
+
+### 4. Models
+
+### 5. Templates
+
+### 6. Services
+
+### 7. Utils
+
+* Global constants, functions, Objects can be defined in a separate file under app/utils
+
+### 8. Mixins
+
+* When importing Mixin inside any Component/Controller, use single blank space comma and Curly brace
+
+### 9. Initializers
+
+
+## Generic rules:
+
+* Use => only for small methods(less than 4 lines) 
+* let-const instead of var
+* if-else: not more than 2 
+
+* Actions like Transitioning routes, opening/closing modals, reloading data into store should be done using Controller/Route action handling 
+* Always use Ember.observer() instead of .observes('') 
+* Always use Ember.computed() instead of .property('') 
+* Use Ember.String namespace for utility string functions 
+* Use Ember.computed namespace for utility 
+* Use destructuring to extract frequently used Ember namespace like computed, Observer, inject etc. 
+* Create POD style components.
+* Define any Ember Entity as an object first using let. Then export that object as the last line in the file.(not valid) 
+* Define Ember.Objects in separate files under app/objects which can be imported when needed.
